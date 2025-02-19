@@ -1,0 +1,6 @@
+export {default as App} from './app/app'
+export {default as MainComponent} from './mainComponent/mainComponent'
+export {default as Navbar} from './navbar/navbar'
+export {default as Search} from './search/search'
+export {default as VidioDetails} from './vidios/vidio-details'
+export {default as Chanel} from './chanel/chanel'

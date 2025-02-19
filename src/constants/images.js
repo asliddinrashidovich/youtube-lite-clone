@@ -1,0 +1,1 @@
+export const headerLogo = 'https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png'
