@@ -10,7 +10,7 @@ const MainComponent = () => {
   const [vidios, setVidios] = useState([])
 
   useEffect(() => {
-    Apiservice.fetching('search').then(data => setVidios(data))
+    Apiservice.fetching(`search?part=snippet&q=${selectedCategory}`).then(data => setVidios(data.data.items))
   }, [])
   
   const setCategoryFunc = category => setSelectedCategory(category);
