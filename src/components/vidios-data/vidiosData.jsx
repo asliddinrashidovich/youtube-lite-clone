@@ -9,7 +9,7 @@ VidiosData.propTypes = {
 
 function VidiosData ({vidios}) {
   return (
-    <Stack width={'100%'} direction={'row'} flexWrap={'wrap'} justifyContent={'start'} alignItems={'center'} gap={2}>
+    <Stack width={'100%'} direction={'row'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'} gap={2}>
       {vidios.map(item => {
         return (
           <Box key={uuidv4()}>
