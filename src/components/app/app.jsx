@@ -1,5 +1,3 @@
-import React from 'react'
-import { Button, Container } from '@mui/material'
 import { Route, Routes } from 'react-router-dom'
 import {MainComponent, Navbar, VidioDetails, Search, Chanel} from '../'
 import {Box} from '@mui/material'
@@ -10,9 +8,9 @@ const App = () => {
       <Navbar/>
       <Routes>
         <Route path='/' element={<MainComponent/>}/>
-        <Route path='/chanel' element={<Chanel/>}/>
-        <Route path='/vidio' element={<VidioDetails/>}/>
-        <Route path='/search' element={<Search/>}/>
+        <Route path='/chanel/:id' element={<Chanel/>}/>
+        <Route path='/video/:id' element={<VidioDetails/>}/>
+        <Route path='/search/:id' element={<Search/>}/>
       </Routes>
     </Box>
   )

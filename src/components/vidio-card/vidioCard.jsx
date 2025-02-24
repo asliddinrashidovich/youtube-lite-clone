@@ -2,6 +2,7 @@ import { CheckCircle } from "@mui/icons-material";
 import { Avatar, Card, CardContent, CardMedia, Stack, Typography } from "@mui/material"
 import moment from "moment";
 import PropTypes from "prop-types"
+import { Link } from "react-router-dom";
 // import { colors } from '../../constants/color'
 
 VidioCard.propTypes = {
@@ -9,12 +10,13 @@ VidioCard.propTypes = {
 };
 
 function VidioCard({vidioItem}) {
-  console.log(vidioItem?.snippet?.thumbnails?.high?.url)
   return (
-    <Card sx={{width: '320px', boxShadow: 'none', borderRadius: 0}}>
-        <CardMedia image={vidioItem?.snippet?.thumbnails?.high?.url} sx={{width: '360px', height: '180px'}}/>
+    <Card sx={{width: {xs: '100%', sm: '100%', md: '350px'}, boxShadow: 'none', borderRadius: 0}}>
+        <Link to={`/video/${vidioItem.id.videoId}`}>
+          <CardMedia image={vidioItem?.snippet?.thumbnails?.high?.url} sx={{width:  {xs: '100%', sm: '100%', md: '350px'}, height: {xs: '250px', sm: '230px', md: '180px'}, borderRadius: '15px'}}/>
+        </Link>
         <CardContent sx={{backgroun: 'red',  height: '200px', position: 'relative'}}>
-          <>
+          <Link to={`/video/${vidioItem.id.videoId}`}>
             <Typography my={'5px'} sx={{opacity: '.4'}}>
               {moment(vidioItem?.snippet?.publishedAt).fromNow()}
             </Typography>
@@ -24,8 +26,8 @@ function VidioCard({vidioItem}) {
             <Typography variant="subtitle2" fontWeight={'bold'}>
               {vidioItem?.snippet?.description.slice(0, 70)}
             </Typography>
-          </>
-          <>
+          </Link>
+          <Link to={`/chanel/${vidioItem?.snippet?.channelId}`}>
             <Stack direction={'row'} position={'absolute'} bottom={'10px'} alignItems={'center'} gap={'5px'} >
               <Avatar src={vidioItem?.snippet?.thumbnails?.high?.url} />
               <Typography>
@@ -33,7 +35,7 @@ function VidioCard({vidioItem}) {
                 <CheckCircle sx={{fontSize: '12px', color: 'gray', marginLeft: '5px'}}/>
               </Typography>
             </Stack>
-          </>
+          </Link>
         </CardContent>
     </Card>
   )

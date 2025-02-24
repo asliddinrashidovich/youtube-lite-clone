@@ -11,7 +11,7 @@ const MainComponent = () => {
 
   useEffect(() => {
     Apiservice.fetching(`search?part=snippet&q=${selectedCategory}`).then(data => setVidios(data.data.items))
-  }, [])
+  }, [selectedCategory])
   
   const setCategoryFunc = category => setSelectedCategory(category);
   return (
@@ -22,7 +22,7 @@ const MainComponent = () => {
           <Typography variant='h4' fontWeight={'bold'} mb={2}>
             {selectedCategory} <span style={{color: colors.secondary}}>vidios</span>
           </Typography>
-          <VidiosData vidios={vidios}/>
+          <VidiosData vidios={vidios} />
         </Container>
       </Box>
     </Stack>
