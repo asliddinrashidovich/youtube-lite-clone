@@ -30,6 +30,7 @@ const VidioDetails = () => {
 
   // const {snippet: {title, channelId, channelTitle, description, tags, thumbnails}, statistics: {viewCount, likeCount, commentCount}} = videoDetail
   
+  console.log(relatedVideo)
   if(!videoDetail && !relatedVideo) {
     return <Loader />
   }
