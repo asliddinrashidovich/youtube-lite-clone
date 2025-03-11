@@ -7,7 +7,7 @@ const App = () => {
     <Box>
       <Navbar/>
       <Routes>
-        <Route path='/' element={<MainComponent/>}/>
+        <Route path='/' element={<MainComponent/>}/> 
         <Route path='/chanel/:id' element={<Chanel/>}/>
         <Route path='/video/:id' element={<VidioDetails/>}/>
         <Route path='/search/:id' element={<Search/>}/>
